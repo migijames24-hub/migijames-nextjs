@@ -2,12 +2,12 @@
 import { useEffect, useState } from 'react'
 
 // Floating gem particles
-const PARTICLES = Array.from({ length: 18 }, (_, i) => ({
-  left: `${8 + (i * 5.2) % 84}%`,
-  delay: `${i * 0.7}s`,
-  duration: `${11 + (i % 5) * 3}s`,
-  size: i % 4 === 0 ? 'w-2 h-2' : 'w-1 h-1',
-  opacity: i % 3 === 0 ? 'opacity-40' : 'opacity-20',
+const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
+  left: `${5 + (i * 7) % 90}%`,
+  delay: `${i * 0.5}s`,
+  duration: `${15 + (i % 6) * 4}s`,
+  size: i % 5 === 0 ? 'w-2 h-2' : 'w-1 h-1',
+  opacity: i % 4 === 0 ? 'opacity-30' : 'opacity-15',
 }))
 
 export default function HeroSection() {
@@ -26,9 +26,9 @@ export default function HeroSection() {
       {/* ── Atmospheric backgrounds ── */}
       <div className="absolute inset-0">
         {/* Deep radial gradients */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_-5%,rgba(201,169,110,0.13),transparent)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_50%_at_20%_70%,rgba(139,107,166,0.06),transparent)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_30%_40%_at_80%_60%,rgba(42,107,90,0.05),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-5%,rgba(201,169,110,0.15),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_20%_80%,rgba(139,107,166,0.08),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_50%_at_80%_70%,rgba(42,107,90,0.07),transparent)]" />
 
         {/* Diamond wireframe - subtle background graphic */}
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.035]">
@@ -125,15 +125,15 @@ export default function HeroSection() {
         </div>
 
         {/* Trust signals */}
-        <div className="flex items-center justify-center gap-8 mt-16">
+        <div className="flex items-center justify-center gap-12 mt-20">
           {[
             { value: '500+', label: 'ชิ้นงาน Bespoke' },
             { value: '7+',   label: 'ปีประสบการณ์' },
-            { value: '100%', label: 'ออกแบบเฉพาะบุคคล' },
-          ].map(item => (
-            <div key={item.label} className="text-center">
-              <div className="font-display text-xl text-gold font-light">{item.value}</div>
-              <div className="font-body text-[9px] tracking-[0.2em] uppercase text-white/25 mt-1">
+            { value: '100%', label: 'เฉพาะบุคคล' },
+          ].map((item, i) => (
+            <div key={item.label} className={`text-center animate-fade-up-delay-${i+1}`}>
+              <div className="font-display text-2xl text-gold font-light tracking-widest">{item.value}</div>
+              <div className="font-body text-[9px] tracking-[0.3em] uppercase text-white/30 mt-2">
                 {item.label}
               </div>
             </div>

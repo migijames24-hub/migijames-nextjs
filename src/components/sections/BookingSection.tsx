@@ -41,90 +41,95 @@ export default function BookingSection() {
   }
 
   return (
-    <section id="booking" className="bg-obsidian py-24 md:py-32 px-8">
-      <div className="section-inner max-w-2xl">
-        <div className="text-center mb-12">
-          <div className="text-eyebrow flex items-center justify-center gap-4 mb-5">
-            <span className="w-8 h-px bg-gold/50" />
-            จองนัดปรึกษา
-            <span className="w-8 h-px bg-gold/50" />
+    <section id="booking" className="bg-obsidian py-24 md:py-32 px-8 relative">
+      <div className="section-inner max-w-2xl relative z-10">
+        <div className="text-center mb-16 animate-fade-up">
+          <div className="text-eyebrow flex items-center justify-center gap-4 mb-6 text-gold/60">
+            <span className="w-8 h-px bg-gold/40" />
+            Reservation · Contact
+            <span className="w-8 h-px bg-gold/40" />
           </div>
-          <h2 className="font-display text-display-md text-white font-light mb-4">
-            เริ่มต้น<em className="text-gold not-italic">การเดินทาง</em>ของคุณ
+          <h2 className="font-display text-display-md text-white font-light mb-6 tracking-wide">
+            เริ่มต้น <em className="text-gold not-italic">การเดินทาง</em> ของคุณ
           </h2>
-          <p className="font-body text-[13px] text-white/30">
-            ฟรีไม่มีค่าใช้จ่าย · ตอบกลับภายใน 24 ชั่วโมง
+          <p className="font-body text-[14px] text-white/30 leading-relaxed font-light">
+            นัดปรึกษาส่วนตัวโดยไม่มีค่าใช้จ่าย 
+            ทีมงานผู้เชี่ยวชาญจะติดต่อกลับเพื่อยืนยันเวลาภายใน 24 ชั่วโมง
           </p>
         </div>
 
         {status === 'sent' ? (
-          <div className="border border-gold/20 bg-gold/5 p-10 text-center">
-            <div className="text-4xl mb-4">✦</div>
-            <h3 className="font-display text-xl text-gold font-light mb-3">ได้รับข้อความแล้ว</h3>
-            <p className="font-body text-[13px] text-white/40">
-              เราจะติดต่อกลับภายใน 24 ชั่วโมงทาง Line หรือ Phone
+          <div className="border border-white/5 bg-white/[0.01] p-16 text-center animate-fade-in">
+            <div className="text-4xl mb-8">✦</div>
+            <h3 className="font-display text-2xl text-gold font-light mb-4">เราได้รับข้อมูลของคุณแล้ว</h3>
+            <p className="font-body text-[14px] text-white/40 leading-relaxed max-w-xs mx-auto">
+              ทีมงาน MigiJames จะติดต่อกลับผ่านช่องทางที่คุณให้ไว้โดยเร็วที่สุด
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <label className="block font-body text-[9px] tracking-[0.3em] uppercase text-white/30 mb-2">
-                  ชื่อ *
+          <form onSubmit={handleSubmit} className="space-y-8 animate-fade-up-delay-1">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-3">
+                <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-white/40">
+                  ชื่อ-นามสกุล *
                 </label>
                 <input
                   type="text"
                   required
                   value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                  className="input-luxury"
-                  placeholder="ชื่อ-นามสกุล"
+                  className="w-full bg-white/[0.02] border border-white/10 px-4 py-4 text-white font-body text-sm
+                             focus:outline-none focus:border-gold/30 transition-colors"
+                  placeholder="กรุณาระบุชื่อของคุณ"
                 />
               </div>
-              <div>
-                <label className="block font-body text-[9px] tracking-[0.3em] uppercase text-white/30 mb-2">
-                  โทรศัพท์ *
+              <div className="space-y-3">
+                <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-white/40">
+                  เบอร์โทรศัพท์ติดต่อ *
                 </label>
                 <input
                   type="tel"
                   required
                   value={form.phone}
                   onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-                  className="input-luxury"
+                  className="w-full bg-white/[0.02] border border-white/10 px-4 py-4 text-white font-body text-sm
+                             focus:outline-none focus:border-gold/30 transition-colors"
                   placeholder="08x-xxx-xxxx"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <label className="block font-body text-[9px] tracking-[0.3em] uppercase text-white/30 mb-2">
-                  อีเมล
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-3">
+                <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-white/40">
+                  อีเมล (ไม่บังคับ)
                 </label>
                 <input
                   type="email"
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                  className="input-luxury"
+                  className="w-full bg-white/[0.02] border border-white/10 px-4 py-4 text-white font-body text-sm
+                             focus:outline-none focus:border-gold/30 transition-colors"
                   placeholder="email@example.com"
                 />
               </div>
-              <div>
-                <label className="block font-body text-[9px] tracking-[0.3em] uppercase text-white/30 mb-2">
-                  วันเกิด (สำหรับวิเคราะห์ดวง)
+              <div className="space-y-3">
+                <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-white/40">
+                  วัน/เดือน/ปี เกิด (เพื่อวิเคราะห์ดวง)
                 </label>
                 <input
                   type="date"
                   value={form.birthday}
                   onChange={e => setForm(f => ({ ...f, birthday: e.target.value }))}
-                  className="input-luxury"
+                  className="w-full bg-white/[0.02] border border-white/10 px-4 py-4 text-white font-body text-sm
+                             focus:outline-none focus:border-gold/30 transition-colors"
                 />
               </div>
             </div>
 
-            <div>
-              <label className="block font-body text-[9px] tracking-[0.3em] uppercase text-white/30 mb-2">
-                ประเภทการปรึกษา
+            <div className="space-y-4">
+              <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-white/40">
+                ช่องทางการปรึกษาที่สะดวก
               </label>
               <div className="grid grid-cols-3 gap-3">
                 {[
@@ -137,11 +142,11 @@ export default function BookingSection() {
                     type="button"
                     onClick={() => setForm(f => ({ ...f, type: opt.value as typeof form.type }))}
                     className={`
-                      font-body text-[9px] tracking-[0.15em] uppercase
-                      py-3 border transition-all duration-300
+                      font-body text-[10px] tracking-[0.1em] uppercase
+                      py-4 border transition-all duration-500
                       ${form.type === opt.value
-                        ? 'border-gold bg-gold/10 text-gold'
-                        : 'border-white/10 text-white/30 hover:border-white/30'
+                        ? 'border-gold bg-gold/5 text-gold'
+                        : 'border-white/5 text-white/30 hover:border-white/20'
                       }
                     `}
                   >
@@ -151,30 +156,34 @@ export default function BookingSection() {
               </div>
             </div>
 
-            <div>
-              <label className="block font-body text-[9px] tracking-[0.3em] uppercase text-white/30 mb-2">
-                เรื่องที่ต้องการปรึกษา
+            <div className="space-y-3">
+              <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-white/40">
+                เรื่องที่คุณสนใจ หรือ อัญมณีที่ต้องการ
               </label>
               <textarea
-                rows={3}
+                rows={4}
                 value={form.topic}
                 onChange={e => setForm(f => ({ ...f, topic: e.target.value }))}
-                className="input-luxury resize-none"
-                placeholder="เช่น ต้องการสั่งทำแหวนหมั้น / ต้องการอัญมณีเสริมดวงการเงิน"
+                className="w-full bg-white/[0.02] border border-white/10 px-4 py-4 text-white font-body text-sm
+                           focus:outline-none focus:border-gold/30 transition-colors resize-none"
+                placeholder="เช่น สนใจสั่งทำแหวนหมั้น, ต้องการปรึกษาเรื่องอัญมณีเสริมดวงการงาน"
               />
             </div>
 
-            <div className="pt-2">
+            <div className="pt-4">
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="btn-gold w-full disabled:opacity-50"
+                className="btn-gold w-full disabled:opacity-20 disabled:cursor-not-allowed group relative overflow-hidden"
               >
-                {status === 'sending' ? 'กำลังส่ง...' : 'ส่งคำขอนัด'}
+                <span className="relative z-10">
+                  {status === 'sending' ? 'กำลังส่งข้อมูล...' : 'ส่งคำขอนัดหมาย'}
+                </span>
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </button>
               {status === 'error' && (
-                <p className="font-body text-[11px] text-red-400 text-center mt-3">
-                  เกิดข้อผิดพลาด กรุณาลองใหม่หรือติดต่อทาง Line
+                <p className="font-body text-[12px] text-red-400/80 text-center mt-6">
+                  เกิดข้อผิดพลาดชั่วคราว กรุณาลองใหม่อีกครั้ง หรือติดต่อทาง Line
                 </p>
               )}
             </div>
