@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/app/api/contact\")",
+      "Bash(mkdir -p \"E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/app/api/astro-match\")",
+      "Bash(mkdir -p \"E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/components/layout\")",
+      "Bash(mkdir -p \"E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/components/sections\")",
+      "Bash(mkdir -p \"E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/lib\")",
+      "Bash(cp 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/layout.tsx' 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/app/layout.tsx')",
+      "Bash(cp 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/page.tsx' 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/app/page.tsx')",
+      "Bash(cp 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/globals.css' 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/app/globals.css')",
+      "Bash(cp 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/NavBar.tsx' 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/components/layout/NavBar.tsx')",
+      "Bash(cp 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/HeroSection.tsx' 'E:/00.1_ห้องพัฒนาเวบและแอพด้วย AI/Web_02\\) migijames-nextjs/src/components/sections/HeroSection.tsx')",
+      "Bash(npm install:*)",
+      "Bash(npm config:*)",
+      "Bash(curl -s --max-time 10 https://registry.npmjs.org/)",
+      "Bash(npm run:*)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)"
+    ]
+  }
+}
